@@ -1,6 +1,34 @@
-QR encoder in Go based on the ZXing encoder (http://code.google.com/p/zxing/).
+QR Encoder
+==========
 
-I was surprised that I couldn't find a QR encoder in Go, especially
-since the example at http://golang.org/doc/effective_go.html#web_server
-is a QR code generator, though the QR encoding is done by an external
-Google service in the example.
+A QR-Code encoder written in GoLang
+
+
+Installation
+============
+
+```
+sudo go get github.com/ambelovsky/qrencode-go/qrencode
+sudo go install github.com/ambelovsky/qrencode-go/qrencode
+```
+
+
+Usage
+=====
+
+```
+import "github.com/ambelovsky/qrencode-go/qrencode"
+
+func Example() {
+	grid, err := Encode("Testing one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.", ECLevelQ)
+	if err != nil {
+		return
+	}
+	f, err := os.Create("/tmp/qr.png")
+	if err != nil {
+		return
+	}
+	defer f.Close()
+	png.Encode(f, grid.Image(8))
+}
+```
