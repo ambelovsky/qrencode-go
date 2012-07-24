@@ -1,7 +1,7 @@
 QR Encoder
 ==========
 
-A QR-Code encoder written in GoLang
+A QR-Code encoder written in GoLang and licensed under the LGPL v3.
 
 
 Installation
