@@ -17,10 +17,14 @@ Usage
 =====
 
 ```
-import "github.com/ambelovsky/qrencode-go/qrencode"
+import {
+	"os"
+	"image/png"
+	"github.com/ambelovsky/qrencode-go/qrencode"
+}
 
 func Example() {
-	grid, err := Encode("Testing one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.", ECLevelQ)
+	grid, err := qrencode.Encode("Testing one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.", qrencode.ECLevelQ)
 	if err != nil {
 		return
 	}
