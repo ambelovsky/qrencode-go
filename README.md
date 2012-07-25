@@ -24,7 +24,8 @@ import {
 }
 
 func Example() {
-	grid, err := qrencode.Encode("Testing one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.", qrencode.ECLevelQ)
+	var data []byte = []byte("Testing one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty.")
+	grid, err := qrencode.EncodeBytes(data, qrencode.ECLevelQ)
 	if err != nil {
 		return
 	}
